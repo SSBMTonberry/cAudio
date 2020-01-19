@@ -23,7 +23,7 @@ include_directories (include ${CAUDIO_INCLUDE_DIR} )
 add_executable(Tutorial7_CustomLogReceiver ${SOURCE_FILES})
 
 if(UNIX AND NOT APPLE)
-	target_link_libraries(Tutorial7_CustomLogReceiver cAudio pthread)
+	target_link_libraries(Tutorial7_CustomLogReceiver cAudio dl pthread)
 else()
 	target_link_libraries(Tutorial7_CustomLogReceiver cAudio)
 endif()

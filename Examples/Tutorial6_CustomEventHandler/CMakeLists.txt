@@ -23,7 +23,7 @@ include_directories (include ${CAUDIO_INCLUDE_DIR} )
 add_executable(Tutorial6_CustomEventHandler ${SOURCE_FILES})
 
 if(UNIX AND NOT APPLE)
-	target_link_libraries(Tutorial6_CustomEventHandler cAudio pthread)
+	target_link_libraries(Tutorial6_CustomEventHandler cAudio dl pthread)
 else()
 	target_link_libraries(Tutorial6_CustomEventHandler cAudio)
 endif()

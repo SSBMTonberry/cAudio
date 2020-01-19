@@ -13,7 +13,8 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR})
 set(CAUDIO_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include ${CMAKE_BINARY_DIR}/include PARENT_SCOPE)
 
 include(cAudio_src_files.cmake)		
-add_library(cAudio ${CAUDIO_LIB_TYPE} ${file_root})
+#add_library(cAudio ${CAUDIO_LIB_TYPE} ${file_root})
+add_library(cAudio STATIC ${file_root})
 
 if(CAUDIO_ENABLE_OGG)
 	include_directories (include Headers ${CMAKE_BINARY_DIR}/include ${OPENAL_INCLUDE_DIRS} ${OGG_INCLUDE_DIR} ${VORBIS_INCLUDE_DIR})

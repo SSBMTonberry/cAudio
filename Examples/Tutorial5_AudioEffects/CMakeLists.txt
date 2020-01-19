@@ -21,7 +21,7 @@ include_directories (include ${CAUDIO_INCLUDE_DIR} )
 add_executable(Tutorial5_AudioEffects ${SOURCE_FILES})
 
 if(UNIX AND NOT APPLE)
-	target_link_libraries(Tutorial5_AudioEffects cAudio pthread)
+	target_link_libraries(Tutorial5_AudioEffects cAudio dl pthread)
 else()
 	target_link_libraries(Tutorial5_AudioEffects cAudio)
 endif()

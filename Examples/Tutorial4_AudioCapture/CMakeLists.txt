@@ -21,7 +21,7 @@ include_directories (include ${CAUDIO_INCLUDE_DIR} )
 add_executable(Tutorial4_AudioCapture ${SOURCE_FILES})
 
 if(UNIX AND NOT APPLE)
-	target_link_libraries(Tutorial4_AudioCapture cAudio pthread)
+	target_link_libraries(Tutorial4_AudioCapture cAudio dl pthread)
 else()
 	target_link_libraries(Tutorial4_AudioCapture cAudio)
 endif()

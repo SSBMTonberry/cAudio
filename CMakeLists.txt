@@ -47,7 +47,7 @@ set(CAUDIO_LIB_DIRECTORY "/lib")
 ######################################################################
 
 # Customise what to build
-option(CAUDIO_STATIC "Static build" FALSE)
+option(CAUDIO_STATIC "Static build" TRUE)
 option(CAUDIO_BUILD_SAMPLES "Build Samples" TRUE)
 option(CAUDIO_BUILD_CSHARP_WRAPPER "Build CSharpWrapper - this wrapper is used with the provided *.cs files" FALSE)
 
