@@ -51,3 +51,7 @@
 # /cAudioCSharp/
 /cAudioCSharp/bin
 /cAudioCSharp/obj
+
+.idea/
+
+cmake-build-debug/

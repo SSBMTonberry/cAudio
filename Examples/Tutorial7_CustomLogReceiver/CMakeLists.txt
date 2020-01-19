@@ -22,7 +22,11 @@ set (SOURCE_FILES
 include_directories (include ${CAUDIO_INCLUDE_DIR} )
 add_executable(Tutorial7_CustomLogReceiver ${SOURCE_FILES})
 
-target_link_libraries(Tutorial7_CustomLogReceiver cAudio)
+if(UNIX AND NOT APPLE)
+	target_link_libraries(Tutorial7_CustomLogReceiver cAudio pthread)
+else()
+	target_link_libraries(Tutorial7_CustomLogReceiver cAudio)
+endif()
 add_dependencies(Tutorial7_CustomLogReceiver cAudio)
 
 if(CAUDIO_IOS_BUILD)

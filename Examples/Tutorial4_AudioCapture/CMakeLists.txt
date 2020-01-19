@@ -20,7 +20,11 @@ set (SOURCE_FILES
 include_directories (include ${CAUDIO_INCLUDE_DIR} )
 add_executable(Tutorial4_AudioCapture ${SOURCE_FILES})
 
-target_link_libraries(Tutorial4_AudioCapture cAudio)
+if(UNIX AND NOT APPLE)
+	target_link_libraries(Tutorial4_AudioCapture cAudio pthread)
+else()
+	target_link_libraries(Tutorial4_AudioCapture cAudio)
+endif()
 add_dependencies(Tutorial4_AudioCapture cAudio)
 
 if(CAUDIO_IOS_BUILD)

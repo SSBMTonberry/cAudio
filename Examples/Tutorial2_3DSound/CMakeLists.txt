@@ -20,7 +20,11 @@ set (SOURCE_FILES
 include_directories (include ${CAUDIO_INCLUDE_DIR} )
 add_executable(Tutorial1_3DSound ${SOURCE_FILES})
 
-target_link_libraries(Tutorial1_3DSound cAudio)
+if(UNIX AND NOT APPLE)
+	target_link_libraries(Tutorial1_3DSound cAudio pthread)
+else()
+	target_link_libraries(Tutorial1_3DSound cAudio)
+endif()
 add_dependencies(Tutorial1_3DSound cAudio)
 
 if(CAUDIO_IOS_BUILD)
